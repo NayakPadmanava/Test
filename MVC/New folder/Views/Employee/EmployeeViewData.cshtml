@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "EmployeeViewData";
+}
+
+<h2>EmployeeViewData</h2>
+
+@{ 
+    var empDtls = (ViewData["Empdtl1"]) as List<DemoModel.Models.Employee>;
+}
+
+<div>
+    <thead>EmpId</thead>
+    <thead>EmpName</thead>
+    <thead>EmpSal</thead>
+    <table border="1" cellpadding="10" cellspacing="20">
+
+        @foreach (var item in empDtls)
+        {
+            <tr>
+                <td>
+                    @item.EmpId
+                </td>
+                <td>
+                    @item.EmpName
+                </td>
+                <td>
+                    @item.EmpSal
+                </td>
+            </tr>
+
+        }
+
+    </table>
+</div>

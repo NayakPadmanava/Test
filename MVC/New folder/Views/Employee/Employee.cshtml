@@ -1,0 +1,31 @@
+﻿@*@model IEnumerable<DemoModel.Models.Employee>*@
+@{
+    ViewBag.Title = "Employee";
+}
+
+<h2>Employee</h2>
+<div>
+<thead>EmpId</thead>
+<thead>EmpName</thead>
+<thead>EmpSal</thead>
+<table border="1" cellpadding="10" cellspacing="20">
+
+    @foreach (var item in ViewBag.EmpDtl)
+    {
+        <tr>
+            <td>
+                @item.EmpId
+            </td>
+            <td>
+                @item.EmpName
+            </td>
+            <td>
+                @item.EmpSal
+            </td>
+        </tr>
+
+    }
+
+</table>
+    </div>
+
