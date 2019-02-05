@@ -32,6 +32,16 @@ namespace DemoModel.Controllers
 
             return View();
         }
+        public ActionResult GetEmployeeDtls(string id)
+        {
+            Employee obemp = new Employee();
+            List<Employee> oblist = obemp.GetEmployees();
+            var resultEmp = from item in oblist
+                            where item.EmpId == id
+                            select item;
+           IEnumerable<Employee> obEmp = resultEmp;
+            return View(obEmp);
+        }
 
 
     }

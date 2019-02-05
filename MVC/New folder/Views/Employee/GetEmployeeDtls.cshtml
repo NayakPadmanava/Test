@@ -1,0 +1,35 @@
+﻿@model  IEnumerable<DemoModel.Models.Employee>
+@{
+    ViewBag.Title = "GetEmployeeDtls";
+}
+
+<h2>GetEmployeeDtls</h2>
+@{
+//DemoModel.Models.Employee ob = new DemoModel.Models.Employee();
+//ob = ViewBag.Empdtls as DemoModel.Models.Employee;
+}
+<table>
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>
+            EmpId
+        </td>
+        <td>@item.EmpId</td>
+    </tr>
+    <tr>
+        <td>Emp Name</td>
+        <td>@item.EmpName</td>
+    </tr>
+    <tr>
+        <td>
+            EmpSal
+        </td>
+        <td>
+            @item.EmpSal
+        </td>
+    </tr>
+    }
+</table>
+@Html.ActionLink("BackTolist","Employee", "Employee")
+
