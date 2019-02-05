@@ -1,0 +1,44 @@
+﻿@model DemoModel.Models.Employee
+
+@{
+    ViewBag.Title = "DemoStronglyTyped";
+}
+
+<h2>DemoStronglyTyped</h2>
+
+<div>
+    <h4>Employee</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @*@Html.DisplayNameFor(model => model.EmpId)*@
+            @Html.Label("EmpId")
+            @*@Html.LabelFor(model => model.EmpId,"Hi")*@
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpId) @*//100*@
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmpSal)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmpSal)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
