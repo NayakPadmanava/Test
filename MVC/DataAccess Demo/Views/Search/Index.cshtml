@@ -1,0 +1,40 @@
+﻿@model CustomerManagement.Models.Customer
+@{
+    ViewBag.Title = "Index";
+}
+<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+<script type="text/javascript">
+
+
+    function CallPartial() {
+        debugger;
+
+        var callUrl =" @Url.Action("GetCustomer", "Search")";
+
+        $.get(callUrl, null, function (data) {
+            $("#rData").html(data);
+        });  
+    }
+
+</script>
+
+
+
+
+<h2>Index</h2>
+<table>
+    <tr>
+        <td>
+            @Html.LabelFor(model => model.CustId)
+        </td>
+        <td>
+            @Html.TextBoxFor(model => model.CustId)
+        </td>
+        <td>
+            <input id="btn_Search" name="btn_search" type="button" onclick="return CallPartial();" value="Search" />
+        </td>
+    </tr>
+</table>
+<div id="rData">
+
+</div>
