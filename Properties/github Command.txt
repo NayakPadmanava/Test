@@ -1,0 +1,71 @@
+git status   --All the modified files in your project.
+git stash
+-----
+Often, when you’ve been working on part of your project, things are in a messy state and you want to switch branches for a bit to work on something else. The problem is, you don’t want to do a commit of half-done work just so you can get back to this point later. 
+The answer to this issue is the git stash command.
+Stashing takes the dirty state of your working directory — that is, your modified tracked files and staged changes — and saves it on a stack of unfinished changes that you can reapply at any time.
+
+To Show all the stash Pages 
+-----------------------------
+git stash show <stash@{0}>  which will show all saved modified files.
+
+git Checkout -b <branch Name>---this point to other branch from the existing the branch
+
+Get Latest Code from Branch 
+------------------------------------
+
+git pull origin <Branch Name>
+
+git fetch
+git reset HEAD
+git add path
+git commit -m 'IE Compatibility changes'
+git reset --soft HEAD~1
+git reset HEAD
+
+git commit -m
+
+git push
+
+------------------------------------------------------------
+Interrupted workflow
+------------------------------
+When you are in the middle of something, your boss comes in and demands that you fix something immediately. Traditionally, you would make a commit to a temporary branch to store your changes away, and return to your original branch to make the emergency fix, like this:
+
+# ... hack hack hack ...
+$ git checkout -b my_wip
+$ git commit -a -m "WIP"
+$ git checkout master
+$ edit emergency fix
+$ git commit -a -m "Fix in a hurry"
+$ git checkout my_wip
+$ git reset --soft HEAD^
+# ... continue hacking ...
+
+
+Getting particular file from a specific branch
+ git checkout ecl-implementing-ie-browsercompatibility-on-searchpop-up-page-160651223  NetClaim/Base/NetClaimWebApplication/NetClaimWebApplication/other/search.asp
+
+Reverting the merged Code in GitHub
+Link: https://gist.github.com/gunjanpatel/18f9e4d1eb609597c50c2118e416e6a6
+git revert -m 1 commitID
+----------------------------------------------------------------------------------
+Reverting the recent committed code 
+
+git revert commitID
+
+Revert any committed and Pushed changes
+git revert singleCommitID
+git status 
+git push
+
+Revert 1 single page changes from Commit and Pushed Code
+-------------------------------------------------------------
+git checkout originalMainBranchid particularPagePath
+git status
+git commit -m 'Revert FMLA Changes in ClientNoIns.page'
+git status
+git push 
+
+
+  
