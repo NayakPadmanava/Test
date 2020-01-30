@@ -1,0 +1,67 @@
+Machine Name:a1ml27336
+IP Address:172.23.96.177
+  Local NetClaim User Details
+---------------------------------
+UserID:PNAYAK
+Password:Padman1!
+Proxy Details
+-----------------
+172.22.218.218----8085
+
+ToReset Mindtree Password
+---------------------------
+http://myaccess.mindtree.com
+BBSR Proxy-
+--------------------
+172.17.2.218
+9040404134--Land Deal
+
+Navex Details
+
+https://outlook.office365.com/owa/navexglobal.com 
+
+User Details
+------------------
+userId: pnayak
+Domain: corp
+User
+email: pnayak@navexglobal.com
+Password: Navex123!
+
+New Pwd:Ashok1984#
+
+NetClaim User Details
+-----------------------
+UserName:PNAYAK
+PWD:ashok123#
+
+
+GitHub 
+-----==
+User Id:padmanava.nayak@mindtree.com
+Pwd:Ashok1984#
+Conference Code:628 378 8926
+
+883 504 3891
+Meeting Conference
+------------------------------ 
+Toll Free Number
+180030106096 
+Conference Code: 481 263 6327
+ 
+Db Backup Path
+------------------------
+\\is2.thenetworkinc.net\IT_Shared\Argon\DBBackups 
+\\clt-qa1-ncclp01.yoda.local\C$\Backup
+
+Shared Path of Mine
+---------------------------
+\\mtw02isilon\DataStore\CISGSD\M1048044
+
+Project Shared Path
+----------------------------
+\\172.22.192.91\MediaStore\Navex_Netclaim
+
+Relocation Page
+----------------------
+https://tms.mindtree.com/relocation
