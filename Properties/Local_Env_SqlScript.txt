@@ -1,0 +1,76 @@
+Local Setup Script
+----------------------
+DECLARE @login varchar(25) = 'msingh'
+DECLARE @password varchar(25) = PWDENCRYPT('weclome1')
+INSERT INTO SysUser VALUES
+(@login, @password, 'SINGH', 'M', '', 'MS', '', '', 0, 'msingh@navexglobal.com', 1, 0, '2030-01-01', 1, 2, 1, NULL, GETDATE(), GETDATE(), 1, NULL)
+
+--ADD User:
+--Examle user query:
+-- SELECT * FROM SysUser WHERE SysUserID IN (417, 22510, 161427)
+
+--Update all these variables with your user's information from INT
+
+DECLARE @ID INT = NULL
+
+DECLARE @login varchar(15) = ''
+
+DECLARE @First varchar(35) = ''
+
+DECLARE @Last varchar(35) = ''
+
+DECLARE @MiddleInitial varchar(1) = NULL
+
+DECLARE @Initials varchar(3) = NULL
+
+DECLARE @EmailAccount varchar(255) = '@navexglobal.com'
+
+SET IDENTITY_INSERT Netclaim..SysUser ON
+
+INSERT INTO [NetClaim].[dbo].[SysUser] ([SysUserID],[Login],[Password],[LastName],[FirstName],
+[MiddleInit],[Initials],[WorkPhone],[WorkPhoneExt],[Attrib],[EmailAccount],[AllowAccessByInternet],
+[InvalidLoginAttempts],[PasswordLastChng],
+[SysOrgID],[UserStatus],[UserType],[SetupNote],[Created],[LastModified],[LastModifiedBy],[LastLoginDate]) 
+
+    VALUES(@ID,@login,pwdencrypt('Password1'),@Last,@First,@MiddleInitial,@Initials,'','',0,
+@EmailAccount,1,0,GETDATE(),1,2,1,NULL,GETDATE(),GETDATE(),195875,GETDATE())
+
+SET IDENTITY_INSERT Netclaim..SysUser OFF
+
+--Add User to ClientProfile (update the @uid if you want to use one from another server):
+
+DECLARE @uid UNIQUEIDENTIFIER = NEWID()
+INSERT INTO [ClientProfile].[dbo].[User] ([ID],[Deleted],[CreatedBy],[DateEntered],[ModifiedUserID],[DateModified],[UserName],[UserPassword],[UserHash],[FirstName],[LastName],[IsAdmin],[Email],[Status],[UserPreferences],[SysUserID])
+  
+  VALUES(@uid,0, @uid,GETDATE(),@uid,GETDATE(),(SELECT REPLACE(SUSER_SNAME(),HOST_NAME() + '\','')),NULL,NULL,@First,@Last,1,@EmailAccount,NULL,NULL,@ID)
+
+--Give the new user some roles
+INSERT INTO [ClientProfile].[dbo].[UserRole] ([ID],[Deleted],[CreatedBy],[DateEntered],[ModifiedUserID],[DateModified],[UserID],[RoleID])
+   
+  VALUES(NEWID(),0,@uid,GETDATE(),@uid,GETDATE(),@uid,2)
+
+INSERT INTO [ClientProfile].[dbo].[UserRole] ([ID],[Deleted],[CreatedBy],[DateEntered],[ModifiedUserID],[DateModified],[UserID],[RoleID])
+     
+VALUES(NEWID(),0,@uid,GETDATE(),@uid,GETDATE(),@uid,16)
+
+INSERT INTO [ClientProfile].[dbo].[UserRole] ([ID],[Deleted],[CreatedBy],[DateEntered],[ModifiedUserID],[DateModified],[UserID],[RoleID])
+ 
+    VALUES(NEWID(),0,@uid,GETDATE(),@uid,GETDATE(),@uid,42)
+
+INSERT INTO [ClientProfile].[dbo].[UserRole] ([ID],[Deleted],[CreatedBy],[DateEntered],[ModifiedUserID],[DateModified],[UserID],[RoleID])
+ 
+  VALUES(NEWID(),0,@uid,GETDATE(),@uid,GETDATE(),@uid,19)
+
+INSERT INTO [ClientProfile].[dbo].[UserRole] ([ID],[Deleted],[CreatedBy],[DateEntered],[ModifiedUserID],[DateModified],[UserID],[RoleID])
+  
+   VALUES(NEWID(),0,@uid,GETDATE(),@uid,GETDATE(),@uid,99)
+
+INSERT INTO [ClientProfile].[dbo].[UserRole] ([ID],[Deleted],[CreatedBy],[DateEntered],[ModifiedUserID],[DateModified],[UserID],[RoleID])
+  
+   VALUES(NEWID(),0,@uid,GETDATE(),@uid,GETDATE(),@uid,4)
+
+INSERT INTO [ClientProfile].[dbo].[UserRole] ([ID],[Deleted],[CreatedBy],[DateEntered],[ModifiedUserID],[DateModified],[UserID],[RoleID])
+ 
+    VALUES(NEWID(),0,@uid,GETDATE(),@uid,GETDATE(),@uid,18)
+
+GO
