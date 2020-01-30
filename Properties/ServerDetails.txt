@@ -1,0 +1,31 @@
+URL: https://netclaim.clt-qa1-ncclp01.yoda.local/
+
+ClientProfile: http://clientprofile.clt-qa1-ncclp01.yoda.local/Clients/
+You can use below credential if yours is not working
+User Name:PNAYAK
+PWD:Padman1!
+
+Local New Pwd:Padman2!
+
+Now Local New PWD:Welcome39!
+SCHINNAPAN
+
+Password:Padman17!
+
+Msingh
+Welcome2!
+Hdfc:Ashok2018*
+
+https://int.netclaim.net
+
+------------------------------------
+Installation of Powershell script
+
+1. Script should name with .ps1 extention
+2.Open Power shell window from window search option.
+3.It will ask one pop up there we need give Netclaim.dll path
+
+
+
+ 
+ 
